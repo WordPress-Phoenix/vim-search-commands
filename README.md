@@ -1,6 +1,6 @@
 # Vim Search Commands
 
-🔗 **[Hosted on GitHub Pages](https://github.com/WordPress-Phoenix/vim-search-commands) - https://github.com/WordPress-Phoenix/vim-search-commands**
+🔗 **[Hosted on GitHub Pages](https://wordpress-phoenix.github.io/vim-search-commands/) - https://wordpress-phoenix.github.io/vim-search-commands/**
 
 A comprehensive collection of Vim commands organized by categories for quick reference. This repository contains a detailed JSON structure of Vim commands that can be used for building tools, documentation, or as a quick reference guide.
 
