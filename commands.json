@@ -1,12 +1,251 @@
 [
-  {"command": "h", "description": "Move left", "keywords": ["navigation", "movement"]},
-  {"command": "l", "description": "Move right", "keywords": ["navigation", "movement"]},
-  {"command": "j", "description": "Move down", "keywords": ["navigation", "movement"]},
-  {"command": "k", "description": "Move up", "keywords": ["navigation", "movement"]},
-  {"command": "dd", "description": "Delete current line", "keywords": ["delete", "remove"]},
-  {"command": "yy", "description": "Copy current line", "keywords": ["copy", "yank"]},
-  {"command": "p", "description": "Paste copied text", "keywords": ["paste", "insert"]},
-  {"command": "/search", "description": "Search for text", "keywords": ["search", "find"]},
-  {"command": ":w", "description": "Save file", "keywords": ["save", "write"]},
-  {"command": ":q", "description": "Quit Vim", "keywords": ["quit", "exit"]}
+  {
+    "category": "Global",
+    "commands": [
+      {"command": ":h [elp] keyword", "description": "Open help for keyword", "keywords": ["help", "documentation"]},
+      {"command": ":sav [eas] file", "description": "Save file as", "keywords": ["save", "file"]},
+      {"command": ":clo [se]", "description": "Close current pane", "keywords": ["close", "pane"]},
+      {"command": ":ter [minal]", "description": "Open a terminal window", "keywords": ["terminal", "shell"]},
+      {"command": ":w", "description": "Save file", "keywords": ["save", "write"]},
+      {"command": ":w !sudo tee %", "description": "Save file with sudo", "keywords": ["save", "sudo"]},
+      {"command": ":q", "description": "Close file", "keywords": ["quit", "close"]},
+      {"command": ":q!", "description": "Close file, abandon changes", "keywords": ["quit", "force"]},
+      {"command": ":wq", "description": "Save and close file", "keywords": ["save", "quit"]}
+    ]
+  },
+  {
+    "category": "Cursor Movement",
+    "commands": [
+      {"command": "h", "description": "Move cursor left", "keywords": ["navigation", "movement"]},
+      {"command": "j", "description": "Move cursor down", "keywords": ["navigation", "movement"]},
+      {"command": "k", "description": "Move cursor up", "keywords": ["navigation", "movement"]},
+      {"command": "l", "description": "Move cursor right", "keywords": ["navigation", "movement"]},
+      {"command": "H", "description": "Move to top of screen", "keywords": ["navigation", "screen"]},
+      {"command": "M", "description": "Move to middle of screen", "keywords": ["navigation", "screen"]},
+      {"command": "L", "description": "Move to bottom of screen", "keywords": ["navigation", "screen"]},
+      {"command": "w", "description": "Jump forwards to the start of a word", "keywords": ["navigation", "word"]},
+      {"command": "W", "description": "Jump forwards to the start of a word (words can contain punctuation)", "keywords": ["navigation", "word"]},
+      {"command": "e", "description": "Jump forwards to the end of a word", "keywords": ["navigation", "word"]},
+      {"command": "E", "description": "Jump forwards to the end of a word (words can contain punctuation)", "keywords": ["navigation", "word"]},
+      {"command": "b", "description": "Jump backwards to the start of a word", "keywords": ["navigation", "word"]},
+      {"command": "B", "description": "Jump backwards to the start of a word (words can contain punctuation)", "keywords": ["navigation", "word"]},
+      {"command": "0", "description": "Jump to the start of the line", "keywords": ["navigation", "line"]},
+      {"command": "^", "description": "Jump to the first non-blank character of the line", "keywords": ["navigation", "line"]},
+      {"command": "$", "description": "Jump to the end of the line", "keywords": ["navigation", "line"]},
+      {"command": "g_", "description": "Jump to the last non-blank character of the line", "keywords": ["navigation", "line"]},
+      {"command": "gg", "description": "Go to the first line of the document", "keywords": ["navigation", "document"]},
+      {"command": "G", "description": "Go to the last line of the document", "keywords": ["navigation", "document"]}
+    ]
+  },
+  {
+    "category": "Editing",
+    "commands": [
+      {"command": "dd", "description": "Delete current line", "keywords": ["delete", "remove"]},
+      {"command": "yy", "description": "Copy current line", "keywords": ["copy", "yank"]},
+      {"command": "p", "description": "Paste copied text", "keywords": ["paste", "insert"]},
+      {"command": "u", "description": "Undo last change", "keywords": ["undo", "revert"]},
+      {"command": "Ctrl + r", "description": "Redo last undone change", "keywords": ["redo", "revert"]},
+      {"command": "i", "description": "Insert before the cursor", "keywords": ["insert", "edit"]},
+      {"command": "I", "description": "Insert at the beginning of the line", "keywords": ["insert", "edit"]},
+      {"command": "a", "description": "Insert after the cursor", "keywords": ["insert", "append"]},
+      {"command": "A", "description": "Insert at the end of the line", "keywords": ["insert", "append"]},
+      {"command": "o", "description": "Insert a new line below the current line", "keywords": ["insert", "newline"]},
+      {"command": "O", "description": "Insert a new line above the current line", "keywords": ["insert", "newline"]},
+      {"command": "ea", "description": "Insert at the end of the word", "keywords": ["insert", "word"]},
+      {"command": "x", "description": "Delete character at cursor", "keywords": ["delete", "character"]}
+    ]
+  },
+  {
+    "category": "Visual Mode",
+    "commands": [
+      {"command": "v", "description": "Start visual mode, mark lines, then do a command (like y-yank)", "keywords": ["visual", "select"]},
+      {"command": "V", "description": "Start linewise visual mode", "keywords": ["visual", "select", "line"]},
+      {"command": "Ctrl + v", "description": "Start visual block mode", "keywords": ["visual", "select", "block"]},
+      {"command": "o", "description": "Move to other end of marked area", "keywords": ["visual", "navigation"]},
+      {"command": "O", "description": "Move to other corner of block", "keywords": ["visual", "navigation"]},
+      {"command": "aw", "description": "Mark a word", "keywords": ["visual", "word"]},
+      {"command": "ab", "description": "A block with ()", "keywords": ["visual", "block"]},
+      {"command": "aB", "description": "A block with {}", "keywords": ["visual", "block"]},
+      {"command": "at", "description": "A block with <> tags", "keywords": ["visual", "block"]}
+    ]
+  },
+  {
+    "category": "Search and Replace",
+    "commands": [
+      {"command": "/pattern", "description": "Search forward for pattern", "keywords": ["search", "find"]},
+      {"command": "?pattern", "description": "Search backward for pattern", "keywords": ["search", "find"]},
+      {"command": "n", "description": "Repeat search in same direction", "keywords": ["search", "next"]},
+      {"command": "N", "description": "Repeat search in opposite direction", "keywords": ["search", "previous"]},
+      {"command": ":%s/old/new/g", "description": "Replace all old with new throughout file", "keywords": ["replace", "substitute"]},
+      {"command": ":%s/old/new/gc", "description": "Replace all old with new throughout file with confirmations", "keywords": ["replace", "substitute"]}
+    ]
+  },
+  {
+    "category": "Working with Multiple Files",
+    "commands": [
+      {"command": ":e filename", "description": "Edit a file", "keywords": ["file", "edit"]},
+      {"command": ":sp filename", "description": "Open a file in a new buffer and split window", "keywords": ["split", "buffer"]},
+      {"command": ":vsp filename", "description": "Open a file in a new buffer and vertically split window", "keywords": ["split", "buffer"]},
+      {"command": "Ctrl + ws", "description": "Split window", "keywords": ["window", "split"]},
+      {"command": "Ctrl + wv", "description": "Split window vertically", "keywords": ["window", "split"]},
+      {"command": "Ctrl + ww", "description": "Switch windows", "keywords": ["window", "navigation"]},
+      {"command": "Ctrl + wq", "description": "Quit a window", "keywords": ["window", "quit"]}
+    ]
+  },
+  {
+    "category": "Insert Mode Control",
+    "commands": [
+      {"command": "Ctrl + h", "description": "Delete the character before the cursor", "keywords": ["delete", "character", "backspace"]},
+      {"command": "Ctrl + w", "description": "Delete word before the cursor", "keywords": ["delete", "word"]},
+      {"command": "Ctrl + j", "description": "Begin new line", "keywords": ["newline", "enter"]},
+      {"command": "Ctrl + t", "description": "Indent (move right) line one shiftwidth", "keywords": ["indent", "tab"]},
+      {"command": "Ctrl + d", "description": "De-indent (move left) line one shiftwidth", "keywords": ["unindent", "tab"]},
+      {"command": "Ctrl + n", "description": "Insert next match", "keywords": ["complete", "autocomplete"]},
+      {"command": "Ctrl + p", "description": "Insert previous match", "keywords": ["complete", "autocomplete"]}
+    ]
+  },
+  {
+    "category": "Screen Movement",
+    "commands": [
+      {"command": "Ctrl + e", "description": "Move screen down one line (without moving cursor)", "keywords": ["scroll", "screen", "down"]},
+      {"command": "Ctrl + y", "description": "Move screen up one line (without moving cursor)", "keywords": ["scroll", "screen", "up"]},
+      {"command": "Ctrl + b", "description": "Move screen up one page (cursor to last line)", "keywords": ["scroll", "page", "up"]},
+      {"command": "Ctrl + f", "description": "Move screen down one page (cursor to first line)", "keywords": ["scroll", "page", "down"]},
+      {"command": "Ctrl + u", "description": "Move screen up ½ page", "keywords": ["scroll", "half", "up"]},
+      {"command": "Ctrl + d", "description": "Move screen down ½ page", "keywords": ["scroll", "half", "down"]},
+      {"command": "zz", "description": "Center cursor on screen", "keywords": ["center", "cursor", "screen"]}
+    ]
+  },
+  {
+    "category": "Marks",
+    "commands": [
+      {"command": "m[a-zA-Z]", "description": "Set mark [a-zA-Z] at cursor position", "keywords": ["mark", "set", "position"]},
+      {"command": "`[a-zA-Z]", "description": "Jump to mark [a-zA-Z]", "keywords": ["mark", "jump", "goto"]},
+      {"command": "`.", "description": "Jump to last change", "keywords": ["mark", "change", "last"]},
+      {"command": "`0", "description": "Jump to position where Vim was last exited", "keywords": ["mark", "last", "exit"]},
+      {"command": "`\"", "description": "Jump to last position when last editing this file", "keywords": ["mark", "last", "position"]}
+    ]
+  },
+  {
+    "category": "Registers",
+    "commands": [
+      {"command": "\"xy", "description": "Yank into register x", "keywords": ["register", "yank", "copy"]},
+      {"command": "\"xp", "description": "Paste contents of register x", "keywords": ["register", "paste"]},
+      {"command": ":reg", "description": "Show registers content", "keywords": ["register", "show", "list"]},
+      {"command": "\"_", "description": "Black hole register", "keywords": ["register", "delete", "blackhole"]},
+      {"command": "\"+y", "description": "Yank into system clipboard register", "keywords": ["register", "clipboard", "system"]}
+    ]
+  },
+  {
+    "category": "Macros",
+    "commands": [
+      {"command": "qa", "description": "Record macro a", "keywords": ["macro", "record", "start"]},
+      {"command": "q", "description": "Stop recording macro", "keywords": ["macro", "stop", "end"]},
+      {"command": "@a", "description": "Run macro a", "keywords": ["macro", "execute", "play"]},
+      {"command": "@@", "description": "Rerun last run macro", "keywords": ["macro", "repeat"]},
+      {"command": "5@a", "description": "Run macro a 5 times", "keywords": ["macro", "repeat", "multiple"]}
+    ]
+  },
+  {
+    "category": "Advanced Cut and Paste",
+    "commands": [
+      {"command": "yiw", "description": "Yank inner word", "keywords": ["yank", "copy", "word"]},
+      {"command": "yaw", "description": "Yank a word (includes surrounding space)", "keywords": ["yank", "copy", "word"]},
+      {"command": "yy or Y", "description": "Yank entire line", "keywords": ["yank", "copy", "line"]},
+      {"command": "3yy", "description": "Yank 3 lines", "keywords": ["yank", "copy", "multiple"]},
+      {"command": "diw", "description": "Delete inner word", "keywords": ["delete", "word"]},
+      {"command": "daw", "description": "Delete a word (includes surrounding space)", "keywords": ["delete", "word"]},
+      {"command": "dd", "description": "Delete entire line", "keywords": ["delete", "line"]},
+      {"command": "3dd", "description": "Delete 3 lines", "keywords": ["delete", "multiple"]},
+      {"command": "p", "description": "Paste after cursor", "keywords": ["paste", "after"]},
+      {"command": "P", "description": "Paste before cursor", "keywords": ["paste", "before"]}
+    ]
+  },
+  {
+    "category": "Indent Text",
+    "commands": [
+      {"command": ">>", "description": "Indent line one shiftwidth", "keywords": ["indent", "line"]},
+      {"command": "<<", "description": "De-indent line one shiftwidth", "keywords": ["unindent", "line"]},
+      {"command": ">%", "description": "Indent a block with () or {} (cursor on brace)", "keywords": ["indent", "block"]},
+      {"command": ">ib", "description": "Indent inner block with ()", "keywords": ["indent", "block", "parentheses"]},
+      {"command": ">at", "description": "Indent a block with <> tags", "keywords": ["indent", "block", "tags"]},
+      {"command": "3>>", "description": "Indent 3 lines", "keywords": ["indent", "multiple"]},
+      {"command": "=i{", "description": "Auto-indent inside current curly braces", "keywords": ["indent", "auto", "braces"]},
+      {"command": "gg=G", "description": "Auto-indent entire file", "keywords": ["indent", "auto", "file"]}
+    ]
+  },
+  {
+    "category": "Advanced Search",
+    "commands": [
+      {"command": "*", "description": "Search forward for word under cursor", "keywords": ["search", "word", "forward"]},
+      {"command": "#", "description": "Search backward for word under cursor", "keywords": ["search", "word", "backward"]},
+      {"command": "g*", "description": "Search forward for partial word under cursor", "keywords": ["search", "partial", "forward"]},
+      {"command": "g#", "description": "Search backward for partial word under cursor", "keywords": ["search", "partial", "backward"]},
+      {"command": ":vimgrep /pattern/ {file}", "description": "Search for pattern in multiple files", "keywords": ["search", "files", "multiple"]},
+      {"command": ":cn", "description": "Jump to the next match", "keywords": ["search", "next", "jump"]},
+      {"command": ":cp", "description": "Jump to the previous match", "keywords": ["search", "previous", "jump"]},
+      {"command": ":copen", "description": "Open a window containing the list of matches", "keywords": ["search", "list", "matches"]}
+    ]
+  },
+  {
+    "category": "Tab Pages",
+    "commands": [
+      {"command": ":tabnew", "description": "Open a new tab", "keywords": ["tab", "new"]},
+      {"command": ":tabnext or gt", "description": "Move to next tab", "keywords": ["tab", "next"]},
+      {"command": ":tabprev or gT", "description": "Move to previous tab", "keywords": ["tab", "previous"]},
+      {"command": ":tabfirst", "description": "Move to first tab", "keywords": ["tab", "first"]},
+      {"command": ":tablast", "description": "Move to last tab", "keywords": ["tab", "last"]},
+      {"command": ":tabm n", "description": "Move current tab to position n", "keywords": ["tab", "move"]},
+      {"command": ":tabdo command", "description": "Execute command on all tabs", "keywords": ["tab", "execute", "all"]}
+    ]
+  },
+  {
+    "category": "Window Splits",
+    "commands": [
+      {"command": ":split or :sp", "description": "Split window horizontally", "keywords": ["split", "horizontal", "window"]},
+      {"command": ":vsplit or :vs", "description": "Split window vertically", "keywords": ["split", "vertical", "window"]},
+      {"command": "Ctrl + w_", "description": "Maximize current window", "keywords": ["window", "maximize"]},
+      {"command": "Ctrl + w=", "description": "Make all windows equal size", "keywords": ["window", "equal"]},
+      {"command": "Ctrl + wh", "description": "Move cursor to left window", "keywords": ["window", "move", "left"]},
+      {"command": "Ctrl + wl", "description": "Move cursor to right window", "keywords": ["window", "move", "right"]},
+      {"command": "Ctrl + wj", "description": "Move cursor to window below", "keywords": ["window", "move", "down"]},
+      {"command": "Ctrl + wk", "description": "Move cursor to window above", "keywords": ["window", "move", "up"]}
+    ]
+  },
+  {
+    "category": "Text Objects",
+    "commands": [
+      {"command": "iw", "description": "Inner word", "keywords": ["text", "object", "word"]},
+      {"command": "aw", "description": "A word (includes surrounding space)", "keywords": ["text", "object", "word"]},
+      {"command": "is", "description": "Inner sentence", "keywords": ["text", "object", "sentence"]},
+      {"command": "as", "description": "A sentence", "keywords": ["text", "object", "sentence"]},
+      {"command": "ip", "description": "Inner paragraph", "keywords": ["text", "object", "paragraph"]},
+      {"command": "ap", "description": "A paragraph", "keywords": ["text", "object", "paragraph"]},
+      {"command": "i\"", "description": "Inner double quoted string", "keywords": ["text", "object", "quotes"]},
+      {"command": "a\"", "description": "A double quoted string", "keywords": ["text", "object", "quotes"]},
+      {"command": "i'", "description": "Inner single quoted string", "keywords": ["text", "object", "quotes"]},
+      {"command": "a'", "description": "A single quoted string", "keywords": ["text", "object", "quotes"]},
+      {"command": "i)", "description": "Inner parentheses block", "keywords": ["text", "object", "parentheses"]},
+      {"command": "a)", "description": "A parentheses block", "keywords": ["text", "object", "parentheses"]},
+      {"command": "i}", "description": "Inner curly brace block", "keywords": ["text", "object", "braces"]},
+      {"command": "a}", "description": "A curly brace block", "keywords": ["text", "object", "braces"]},
+      {"command": "i]", "description": "Inner square bracket block", "keywords": ["text", "object", "brackets"]},
+      {"command": "a]", "description": "A square bracket block", "keywords": ["text", "object", "brackets"]},
+      {"command": "it", "description": "Inner HTML/XML tag", "keywords": ["text", "object", "tag"]},
+      {"command": "at", "description": "A HTML/XML tag", "keywords": ["text", "object", "tag"]}
+    ]
+  },
+  {
+    "category": "Folding",
+    "commands": [
+      {"command": "zf", "description": "Create fold from selection", "keywords": ["fold", "create"]},
+      {"command": "zo", "description": "Open fold", "keywords": ["fold", "open"]},
+      {"command": "zc", "description": "Close fold", "keywords": ["fold", "close"]},
+      {"command": "za", "description": "Toggle fold", "keywords": ["fold", "toggle"]},
+      {"command": "zR", "description": "Open all folds", "keywords": ["fold", "open", "all"]},
+      {"command": "zM", "description": "Close all folds", "keywords": ["fold", "close", "all"]},
+      {"command": "zj", "description": "Move to next fold", "keywords": ["fold", "next"]},
+      {"command": "zk", "description": "Move to previous fold", "keywords": ["fold", "previous"]}
+    ]
+  }
 ]

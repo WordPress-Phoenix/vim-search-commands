@@ -1,6 +1,360 @@
-body {
-    background-color: #f8f9fa;
+.navbar {
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.25rem 0;
+    min-height: unset;
 }
+
+.navbar.navbar-dark .navbar-nav .nav-link,
+.navbar.navbar-dark .navbar-brand,
+.navbar.navbar-dark .navbar-text {
+    color: var(--text-primary) !important;
+}
+
+.navbar.navbar-dark .navbar-text a {
+    color: var(--accent-color) !important;
+}
+
+.navbar.navbar-dark .nav-link:hover,
+.navbar.navbar-dark .navbar-brand:hover {
+    color: var(--accent-color) !important;
+}
+
+.navbar.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar.navbar-dark .navbar-toggler {
+    border-color: var(--border-color);
+}
+.navbar-brand {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar .container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar .nav-link {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.navbar #themeToggle {
+    padding: 0.25rem;
+    height: 28px;
+    width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-color: var(--border-color);
+}
+
+.navbar-toggler {
+    padding: 0.25rem;
+}
+
+.navbar-nav .nav-link,
+.navbar-brand,
+.navbar-text {
+    color: var(--text-primary) !important;
+    line-height: 1.5;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-brand:hover {
+    color: var(--accent-color) !important;
+}
+
+.navbar-toggler {
+    border-color: var(--border-color);
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    position: relative;
+}
+
+.navbar-toggler-icon::before {
+    content: "\F479"; /* Bootstrap icon for menu */
+    font-family: "bootstrap-icons";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-primary);
+}
+
+/* Update the theme toggle button styles */
+.navbar #themeToggle {
+    padding: 0.25rem 0.5rem;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    border-color: var(--border-color);
+}
+
+.navbar #themeToggle:hover {
+    background-color: var(--hover-color);
+}
+
+/* Keep your existing CSS below these styles */
+/* Add these new styles at the top of your CSS file */
+.navbar {
+    min-height: 48px;
+}
+
+.navbar-brand {
+    font-size: 1.1rem;
+}
+
+.navbar .nav-link {
+    font-size: 0.9rem;
+}
+
+.navbar-text {
+    font-size: 0.9rem;
+}
+
+/* Update the theme toggle button styles */
+#themeToggle {
+    width: 32px;
+    height: 32px;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+/* Keep your existing CSS below these new styles */
+:root {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #343a40;
+    --text-secondary: #6c757d;
+    --border-color: #dee2e6;
+    --hover-color: #f2f2f2;
+    --accent-color: #0d6efd;
+    --table-stripe-bg: #f8f9fa;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #e9ecef;
+    --text-secondary: #adb5bd;
+    --border-color: #404040;
+    --hover-color: #363636;
+    --accent-color: #3d8bfd;
+    --table-stripe-bg: #252525;
+}
+
+/* Theme toggle button styles */
+#themeToggle {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+#themeToggle:hover {
+    background-color: var(--hover-color);
+}
+
+#themeToggle .dark-icon {
+    display: none;
+}
+
+[data-theme="dark"] #themeToggle .dark-icon {
+    display: block;
+}
+
+[data-theme="dark"] #themeToggle .light-icon {
+    display: none;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
 h1 {
-    color: #343a40;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.form-control, .form-select {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--bg-secondary);
+    border-color: var(--accent-color);
+    color: var(--text-primary);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.form-control::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* Add/modify these table-specific styles */
+.table {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Override Bootstrap's default table styles */
+.table > :not(caption) > * > * {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: var(--table-stripe-bg);
+}
+
+.table > thead {
+    background-color: var(--bg-secondary);
+}
+
+.table > tbody > tr:hover {
+    background-color: var(--hover-color);
+}
+
+/* Fix border colors */
+.table > :not(:first-child) {
+    border-top: 2px solid var(--border-color);
+}
+
+.table > :not(caption) > * > * {
+    border-bottom-color: var(--border-color);
+}
+
+.table thead th {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
+    padding: 1rem;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: var(--hover-color);
+}
+
+.table td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .table thead {
+        display: none;
+    }
+    
+    .table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+    }
+    
+    .table td {
+        display: block;
+        text-align: left;
+        padding: 0.5rem;
+    }
+    
+    .table td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: inline-block;
+        width: 120px;
+    }
+}
+.footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-primary);
+    position: relative;
+    margin-top: 2rem;
+}
+
+.footer a {
+    color: var(--text-primary);
+}
+
+.footer a:hover {
+    color: var(--accent-color);
+}
+
+.footer-logo {
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.footer a:hover .footer-logo {
+    transform: scale(1.1);
+}
+
+/* Ensure the footer stays at the bottom */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
 }
