@@ -1,0 +1,12 @@
+[
+  {"command": "h", "description": "Move left", "keywords": ["navigation", "movement"]},
+  {"command": "l", "description": "Move right", "keywords": ["navigation", "movement"]},
+  {"command": "j", "description": "Move down", "keywords": ["navigation", "movement"]},
+  {"command": "k", "description": "Move up", "keywords": ["navigation", "movement"]},
+  {"command": "dd", "description": "Delete current line", "keywords": ["delete", "remove"]},
+  {"command": "yy", "description": "Copy current line", "keywords": ["copy", "yank"]},
+  {"command": "p", "description": "Paste copied text", "keywords": ["paste", "insert"]},
+  {"command": "/search", "description": "Search for text", "keywords": ["search", "find"]},
+  {"command": ":w", "description": "Save file", "keywords": ["save", "write"]},
+  {"command": ":q", "description": "Quit Vim", "keywords": ["quit", "exit"]}
+]
